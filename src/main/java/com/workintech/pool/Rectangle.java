@@ -1,11 +1,12 @@
 package com.workintech.pool;
 
 public class Rectangle {
-    private double width, length;
+    private double width;
+    private double length;
 
     public Rectangle(double width, double length) {
-        this.width = Math.max(width, 0);
-        this.length = Math.max(length, 0);
+        this.width = width < 0 ? 0 : width;
+        this.length = length < 0 ? 0 : length;
     }
 
     public double getWidth() {
@@ -17,6 +18,6 @@ public class Rectangle {
     }
 
     public double getArea() {
-        return this.width * this.length;
+        return width * length;
     }
 }
